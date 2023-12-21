@@ -4,8 +4,10 @@ const Collection = () => {
   return (
     <section>
       <div className="collection-outer">
+      
         <p className="alternate-title">our collection</p>
-      </div>
+    
+      
 
       <div className="collection-coffees">
         <div className="collection-item">
@@ -32,6 +34,7 @@ const Collection = () => {
         <p>Ethiopian hand-harvested blend densely packed with vibrant fruit notes.</p>
         </div>
 
+      </div>
 
       </div>
 

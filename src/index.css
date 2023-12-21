@@ -32,6 +32,10 @@ p {
   outline: inherit;
   height: 56px;
   width: 217px;
+}  
+
+.primary-button:hover{
+  background-color: #66D2CF;
 }
 
 /* --------    Navbar styles    --------*/
@@ -111,8 +115,8 @@ nav a:hover {
   position: absolute;
 left: 0%;
 right: 0%;
-top: 0%;
-height: 50px;
+top: 800px;
+height: 400px;
 bottom: 0%;
 width: 100%;
 background: linear-gradient(180deg, rgba(254, 252, 247, 0.0001) 0%, #FEFCF7 100%);
@@ -132,7 +136,7 @@ background: linear-gradient(180deg, rgba(254, 252, 247, 0.0001) 0%, #FEFCF7 100%
 .collection-coffees{
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-around ;
 }
 
 .collection-item{
@@ -149,4 +153,229 @@ background: linear-gradient(180deg, rgba(254, 252, 247, 0.0001) 0%, #FEFCF7 100%
 .collection-item h4{
   font-size: 24px;
   line-height: 32px;
+}
+
+/* --------    Benefits styles    --------*/
+
+.benefits-background{
+background-color: #333D4B;
+color: #FEFCF7; 
+text-align: center;
+height: 577px;
+border-radius: 15px;
+}
+
+.benefits h2{
+  font-size: 40px;
+  line-height: 48px;
+  padding-top: 10%;
+}
+
+.benefits p {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.benefits-reasons{
+    display: flex;
+    position: absolute;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 80%;
+    top: 1900px;
+}
+
+.benefits-item{
+  background-color: #0E8784;
+  color: #FEFCF7;
+  width: 21%;
+  padding: 4% 2%;
+  border-radius: 5px;
+}
+
+.benefits-item h4 {
+  font-size: 24px;
+}
+
+/* --------    Steps styles    --------*/
+
+.steps-outer{
+margin: 300px auto;
+width: 90%;
+}
+
+.rental-manager-progress-bar-container {
+  width: 875px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid #FDD6BA;
+  padding-top: 15px;
+  margin-top: 55px;
+}
+
+
+.rental-manager-progress-bar-container div {
+  background-color: #FEFCF7 !important; 
+  font-weight: bold;
+  color: #7ea5cc;
+  border: 2px solid #0E8784;
+  margin-top: -30px;
+  width: 25px;
+  height: 25px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  z-index: 99;
+}
+
+.steps-description{
+  display: grid;
+  grid-template-columns: repeat(3, 425px);
+}
+
+.steps-description div{
+  width: 285px;
+  padding-bottom: 75px;
+}
+
+.steps-description h2{
+  font-size: 72px;
+  color: #FDD6BA;
+  margin: 0;
+}
+
+.steps-description h3{
+  font-size: 32px;
+  color:#333D4B;
+  width: 260px;
+}
+
+.steps-description p{
+  color:#333D4B;
+}
+
+/* --------    About us styles    --------*/
+
+.about-us-intro{
+  background-image: url('../public/assets/about/desktop/image-hero-whitecup.jpg');
+  background-color: #A2A2A2;
+  background-size: cover;
+  height: 30%;
+  border-radius: 15px;
+  color: #FEFCF7;
+}
+
+.about-us-intro div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 7%;
+  width: 30%;
+  height: 450px;
+}
+
+.about-us h2
+.commitment h2 {
+  font-size: 40px;
+}
+
+.commitment{
+  color:#333D4B;
+display: flex;
+padding: 10% 5%;
+align-items: center;
+justify-content: space-around;
+}
+
+.commitment-text {
+  width: 35%;
+}
+
+.commitment img{
+  border-radius: 10px;
+}
+
+.headquarters-outer{
+width: 90%;
+margin: 0 auto;
+padding-bottom: 100px;
+}
+
+.headquarters-outer h4{
+  font-size: 24px;
+  color: #83888F;
+}
+
+.headquarters{
+  display: flex;
+}
+
+.headquarters div{
+  width: 35%;
+  color: #333D4B;
+}
+
+.headquarters h3{
+  font-size: 32px;
+}
+
+.headquarters p{
+  margin: 0;
+}
+
+
+
+/* --------    Footer styles    --------*/
+
+footer{
+  display: flex;
+  background-color: #333D4B;
+  align-items: center;
+  padding: 2% 4%;
+  justify-content: space-between;
+}
+
+footer ul{
+  list-style: none;
+   display: inline-block;
+}
+
+footer li{
+  display: inline-block;
+  padding-right: 15px;
+}
+
+footer a{
+  font-family: 'Barlow', sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.92px;
+  color: #83888F;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+footer a:hover{
+  cursor: pointer;
+  color: white;
+
+}
+
+.logo-container svg {
+  display: inline-block;
+  color:white;
+}
+
+.social-media svg {
+  color: white;
+}
+
+.social-media svg:hover {
+  cursor: pointer;
+  color: #FDD6BA;
+}
+
+.social-media li{
+  padding-left: 8px;
 }

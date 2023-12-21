@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Collection from './HomePageCoffies';
+import Benefits from './HomeBenefits';
+import Steps from "./HomeSteps";
 
 const HomePage = () => {
   return (
@@ -17,6 +19,8 @@ const HomePage = () => {
         </div>
       </div>
       <Collection />
+      <Benefits />
+      <Steps />
     
     </section>
 
