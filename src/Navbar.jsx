@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
      <nav>
-      <img src="../public/shared/desktop/logo.svg" alt="" />
+      <img src="./shared/desktop/logo.svg" alt="Coffeeroasters logo" />
         <ul>
           <li>
             <Link to="/">HomePage</Link>

@@ -1,19 +1,152 @@
-body{
+body {
   background-color: #FEFCF7;
   margin: 0;
   box-sizing: border-box;
+  padding: 0 10%;
 }
 
-/*Navbar styles*/
-nav{
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Fraunces', serif;
+}
+
+p {
+  font-family: 'Barlow', sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.primary-button {
+  background: none;
+  background-color: #0E8784;
+  color: #FEFCF7;
+  border: none;
+  border-radius: 7px;
+  padding: 0;
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  line-height: 25px;
+  cursor: pointer;
+  outline: inherit;
+  height: 56px;
+  width: 217px;
+}
+
+/* --------    Navbar styles    --------*/
+
+nav {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2% 0;
 }
 
-nav ul{
+nav img {
+  height: 24px;
+}
+
+nav ul {
   list-style: none;
+
 }
 
-nav li{
-  display: inline-block
+nav li {
+  display: inline-block;
+  padding: 0 10px;
 }
 
+nav a {
+  font-family: 'Barlow', sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.92px;
+  color: #83888F;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+nav a:hover {
+  cursor: pointer;
+  color: #333D4B;
+}
+
+/* --------    Homepage styles    --------*/
+
+.home-intro {
+  background-image: url('/public/assets/home/desktop/image-hero-coffeepress.jpg');
+  background-size: cover;
+  width: 100%;
+  height: 700px;
+  border-radius: 15px;
+}
+
+.intro-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 5%;
+  height: 700px;
+  width: 40%;
+  color: white;
+}
+
+.intro-text h1{
+  font-size: 72px;
+  line-height: 72px;
+  margin: 0;
+}
+
+.intro-text p{
+  width: 70%;
+  margin: 5% 0 7% 0;
+}
+
+
+/* --------    Homepage Collection styles    --------*/
+
+.test{
+  position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+height: 50px;
+bottom: 0%;
+width: 100%;
+background: linear-gradient(180deg, rgba(254, 252, 247, 0.0001) 0%, #FEFCF7 100%);
+ 
+}
+
+.collection-outer{
+  text-align: center;
+}
+
+.alternate-title{
+   font-family: 'Fraunces', serif;
+   font-size: 150px;
+   color: #83888F;
+}
+
+.collection-coffees{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.collection-item{
+  width: 18%;
+  text-align: center;
+  color: #333D4B;
+}
+
+.collection-item img{
+  height: 178px;
+  width: auto;
+}
+
+.collection-item h4{
+  font-size: 24px;
+  line-height: 32px;
+}
