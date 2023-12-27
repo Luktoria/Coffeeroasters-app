@@ -32,9 +32,9 @@ p {
   outline: inherit;
   height: 56px;
   width: 217px;
-}  
+}
 
-.primary-button:hover{
+.primary-button:hover {
   background-color: #66D2CF;
 }
 
@@ -87,7 +87,7 @@ nav a:hover {
   border-radius: 15px;
 }
 
-.intro-text{
+.intro-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -97,13 +97,13 @@ nav a:hover {
   color: white;
 }
 
-.intro-text h1{
+.intro-text h1 {
   font-size: 72px;
   line-height: 72px;
   margin: 0;
 }
 
-.intro-text p{
+.intro-text p {
   width: 70%;
   margin: 5% 0 7% 0;
 }
@@ -111,61 +111,61 @@ nav a:hover {
 
 /* --------    Homepage Collection styles    --------*/
 
-.test{
+.test {
   position: absolute;
-left: 0%;
-right: 0%;
-top: 800px;
-height: 400px;
-bottom: 0%;
-width: 100%;
-background: linear-gradient(180deg, rgba(254, 252, 247, 0.0001) 0%, #FEFCF7 100%);
- 
+  left: 0%;
+  right: 0%;
+  top: 800px;
+  height: 400px;
+  bottom: 0%;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(254, 252, 247, 0.0001) 0%, #FEFCF7 100%);
+
 }
 
-.collection-outer{
+.collection-outer {
   text-align: center;
 }
 
-.alternate-title{
-   font-family: 'Fraunces', serif;
-   font-size: 150px;
-   color: #83888F;
+.alternate-title {
+  font-family: 'Fraunces', serif;
+  font-size: 150px;
+  color: #83888F;
 }
 
-.collection-coffees{
+.collection-coffees {
   display: flex;
   width: 100%;
-  justify-content: space-around ;
+  justify-content: space-around;
 }
 
-.collection-item{
+.collection-item {
   width: 18%;
   text-align: center;
   color: #333D4B;
 }
 
-.collection-item img{
+.collection-item img {
   height: 178px;
   width: auto;
 }
 
-.collection-item h4{
+.collection-item h4 {
   font-size: 24px;
   line-height: 32px;
 }
 
 /* --------    Benefits styles    --------*/
 
-.benefits-background{
-background-color: #333D4B;
-color: #FEFCF7; 
-text-align: center;
-height: 577px;
-border-radius: 15px;
+.benefits-background {
+  background-color: #333D4B;
+  color: #FEFCF7;
+  text-align: center;
+  height: 577px;
+  border-radius: 15px;
 }
 
-.benefits h2{
+.benefits h2 {
   font-size: 40px;
   line-height: 48px;
   padding-top: 10%;
@@ -176,16 +176,16 @@ border-radius: 15px;
   margin: 0 auto;
 }
 
-.benefits-reasons{
-    display: flex;
-    position: absolute;
-    justify-content: space-evenly;
-    text-align: center;
-    width: 80%;
-    top: 1900px;
+.benefits-reasons {
+  display: flex;
+  position: absolute;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 80%;
+  top: 1900px;
 }
 
-.benefits-item{
+.benefits-item {
   background-color: #0E8784;
   color: #FEFCF7;
   width: 21%;
@@ -199,9 +199,9 @@ border-radius: 15px;
 
 /* --------    Steps styles    --------*/
 
-.steps-outer{
-margin: 300px auto;
-width: 90%;
+.steps-outer {
+  margin: 300px auto;
+  width: 90%;
 }
 
 .rental-manager-progress-bar-container {
@@ -215,7 +215,7 @@ width: 90%;
 
 
 .rental-manager-progress-bar-container div {
-  background-color: #FEFCF7 !important; 
+  background-color: #FEFCF7 !important;
   font-weight: bold;
   color: #7ea5cc;
   border: 2px solid #0E8784;
@@ -228,35 +228,35 @@ width: 90%;
   z-index: 99;
 }
 
-.steps-description{
+.steps-description {
   display: grid;
   grid-template-columns: repeat(3, 425px);
 }
 
-.steps-description div{
+.steps-description div {
   width: 285px;
   padding-bottom: 75px;
 }
 
-.steps-description h2{
+.steps-description h2 {
   font-size: 72px;
   color: #FDD6BA;
   margin: 0;
 }
 
-.steps-description h3{
+.steps-description h3 {
   font-size: 32px;
-  color:#333D4B;
+  color: #333D4B;
   width: 260px;
 }
 
-.steps-description p{
-  color:#333D4B;
+.steps-description p {
+  color: #333D4B;
 }
 
 /* --------    About us styles    --------*/
 
-.about-us-intro{
+.about-us-intro {
   background-image: url('../public/assets/about/desktop/image-hero-whitecup.jpg');
   background-color: #A2A2A2;
   background-size: cover;
@@ -265,7 +265,7 @@ width: 90%;
   color: #FEFCF7;
 }
 
-.about-us-intro div{
+.about-us-intro div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -279,23 +279,23 @@ width: 90%;
   font-size: 40px;
 }
 
-.commitment{
-  color:#333D4B;
-display: flex;
-padding: 10% 5%;
-align-items: center;
-justify-content: space-around;
+.commitment {
+  color: #333D4B;
+  display: flex;
+  padding: 10% 5%;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .commitment-text {
   width: 35%;
 }
 
-.commitment img{
+.commitment img {
   border-radius: 10px;
 }
 
-.quality-outer{
+.quality-outer {
   background-color: #2C343E;
   height: 500px;
   border-radius: 10px;
@@ -304,7 +304,7 @@ justify-content: space-around;
   margin-bottom: 10%;
 }
 
-.quality-outer img{
+.quality-outer img {
   display: inline-block;
   border-radius: 15px;
   position: absolute;
@@ -318,45 +318,45 @@ justify-content: space-around;
   width: 40%;
 }
 
-.quality h2{
+.quality h2 {
   font-size: 40px;
   margin-top: 15%;
 }
 
 /* --------    Headquarters styles    --------*/
 
-.headquarters-outer{
-width: 90%;
-margin: 0 auto;
-padding-bottom: 100px;
+.headquarters-outer {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 100px;
 }
 
-.headquarters-outer h4{
+.headquarters-outer h4 {
   font-size: 24px;
   color: #83888F;
   margin-bottom: 5%;
 }
 
-.headquarters{
+.headquarters {
   display: flex;
 }
 
-.headquarters div{
+.headquarters div {
   width: 45%;
   color: #333D4B;
 }
 
-.headquarters h3{
+.headquarters h3 {
   font-size: 32px;
 }
 
-.headquarters p{
+.headquarters p {
   margin: 0;
 }
 
 /* --------    Create Plan styles    --------*/
 
-.create-intro{
+.create-intro {
   background-image: url(../public/assets/plan/desktop/image-hero-blackcup.jpg);
   background-size: cover;
   height: 450px;
@@ -364,27 +364,27 @@ padding-bottom: 100px;
   border-radius: 15px;
 }
 
-.create-intro h1{
- font-size: 72px;
- padding-top: 7%;
+.create-intro h1 {
+  font-size: 72px;
+  padding-top: 7%;
 }
 
 .create-intro h1,
-.create-intro p{
+.create-intro p {
   padding-left: 7%;
   width: 30%;
 }
 
 /* -------- Create plan steps -------- */
 
-.create-steps-outer{
-margin: 100px auto;
-width: 93%;
-background-color: #2C343E;
-border-radius: 15px;
-padding-left: 7%;
-padding-top: 5%;
-} 
+.create-steps-outer {
+  margin: 100px auto;
+  width: 93%;
+  background-color: #2C343E;
+  border-radius: 15px;
+  padding-left: 7%;
+  padding-top: 5%;
+}
 
 .create-progress-bar-container {
   width: 875px;
@@ -398,7 +398,7 @@ padding-top: 5%;
 
 
 .create-progress-bar-container div {
-  background-color: #2C343E !important; 
+  background-color: #2C343E !important;
   font-weight: bold;
   color: #7ea5cc;
   border: 2px solid #FDD6BA;
@@ -411,73 +411,140 @@ padding-top: 5%;
   z-index: 99;
 }
 
-.create-steps-description{
+.create-steps-description {
   display: grid;
   grid-template-columns: repeat(3, 425px);
 }
 
-.create-steps-description div{
+.create-steps-description div {
   width: 285px;
   padding-bottom: 95px;
 }
 
-.create-steps-description h2{
+.create-steps-description h2 {
   font-size: 72px;
   color: #FDD6BA;
   margin: 0;
 }
 
-.create-steps-description h3{
+.create-steps-description h3 {
   font-size: 32px;
-  color:#FEFCF7;
+  color: #FEFCF7;
   width: 260px;
 }
 
-.create-steps-description p{
-  color:#FEFCF7;
+.create-steps-description p {
+  color: #FEFCF7;
 }
 
 
 /* -------- Coffeetype styles  ---------*/
 
-.options{
+.preference-steps{
+  display: inline-grid;
+  width: 20%;
+}
+
+.preference-steps span, h4{
+  display: inline-block;
+}
+
+.preference-steps span{
+  margin-right: 10px;
+}
+
+.choose-preferences{
+display: inline-block;
+}
+
+.preferences{
+  width: 60%;
+  display: inline-grid;
+}
+
+
+.options,
+.types,
+.amounts,
+.grindtypes,
+.delivery-times {
   display: grid;
-grid-template-columns: repeat(3, 1fr);
-grid-template-rows: repeat(10, 1fr);
-grid-column-gap: 0px;
-grid-row-gap: 0px;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: repeat(2, 1fr); */
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
 }
 
-.question-one{
-  grid-area: 1 / 1 / 2 / 6; 
+.question-one,
+.question-two,
+.question-three,
+.question-four,
+.question-five {
+  grid-area: 1 / 1 / 2 / 6;
 }
 
-/* .preference1{
-grid-area: 2 / 1 / 3 / 2;
-} */
-
-.question-two{
-  grid-area:  3 / 1 / 4 / 4;
-}
-.testColor{
-  background-color: red;
+.inactive {
+  background-color: #97979721;
+  padding: 5%;
+  width: 60%;
+  border-radius: 10px;
 }
 
-.type1{
-  grid-area: 4 / 1 / 5 / 2;
+.activeColor {
+  background-color: #0E8784;
+  padding: 5%;
+  width: 60%;
+  color: white;
+  border-radius: 10px;
 }
 
-.type2{
-  grid-area: 4 / 2 / 5 / 3; 
+.summary{
+  display: block;
+  background-color: #2C343E;
+  color: white;
+  padding: 4%;
 }
 
-.type3{
-  grid-area: 4 / 3 / 5 / 4; 
+.summary h3{
+  font-family: 'Barlow', sans-serif;
+  text-transform: uppercase;
+  color: #83888F;
+  font-weight: 500;
+}
+
+.summary p{
+  font-size: 24px;
+   font-family: 'Fraunces', serif;
+}
+
+.summary span{
+  color: #0E8784;
+}
+
+.order{
+  background: none;
+  background-color: #0E8784;
+  color: #FEFCF7;
+  border: none;
+  border-radius: 7px;
+  padding: 0;
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  line-height: 25px;
+  cursor: pointer;
+  outline: inherit;
+  height: 56px;
+  width: 217px;
+}
+
+.order:hover{
+background-color: #66D2CF;
 }
 
 /* --------    Footer styles    --------*/
 
-footer{
+footer {
   display: flex;
   background-color: #333D4B;
   align-items: center;
@@ -485,17 +552,17 @@ footer{
   justify-content: space-between;
 }
 
-footer ul{
+footer ul {
   list-style: none;
-   display: inline-block;
+  display: inline-block;
 }
 
-footer li{
+footer li {
   display: inline-block;
   padding-right: 15px;
 }
 
-footer a{
+footer a {
   font-family: 'Barlow', sans-serif;
   font-size: 12px;
   line-height: 15px;
@@ -506,7 +573,7 @@ footer a{
   text-decoration: none;
 }
 
-footer a:hover{
+footer a:hover {
   cursor: pointer;
   color: white;
 
@@ -514,7 +581,7 @@ footer a:hover{
 
 .logo-container svg {
   display: inline-block;
-  color:white;
+  color: white;
 }
 
 .social-media svg {
@@ -526,6 +593,6 @@ footer a:hover{
   color: #FDD6BA;
 }
 
-.social-media li{
+.social-media li {
   padding-left: 8px;
 }
