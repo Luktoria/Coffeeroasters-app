@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CreateSteps from './CreateSteps';
 
 
+
 const CreatePlan = () => {
   const preferences = [
     {
@@ -108,10 +109,33 @@ const CreatePlan = () => {
   const [chosenGrind, setChosenGrind] = useState("_____");
   let [activeGrindStyle, setActiveGrindStlye] = useState("");
   const [chosenDelivery, setChosenDelivery] = useState("_____");
-  let [activeDeliveryStyle, setActiveDeliveryStyle] = useState("")
+  let [activeDeliveryStyle, setActiveDeliveryStyle] = useState("");
+  const [methodOpened, setMethodOpened] = useState(false);
+  const [typeOpened, setTypeOpened] = useState(false);
+  const [amountOpened, setAmountOpened] = useState(false);
+  const [grindOpened, setGrindOpened] = useState(false);
+  const [deliveryOpened, setDeliveryOpened] = useState(false);
 
 
+  const toggleMethod = () => {
+    setMethodOpened(methodOpened => !methodOpened);
+  };
 
+  const toggleType = () => {
+    setTypeOpened(typeOpened => !typeOpened);
+  };
+
+  const toggleAmount = () => {
+    setAmountOpened(amountOpened => !amountOpened);
+  };
+
+  const toggleGrind = () => {
+    setGrindOpened(grindOpened => !grindOpened);
+  };
+
+  const toggleDelivery = () => {
+    setDeliveryOpened(deliveryOpened => !deliveryOpened);
+  };
 
   const chooseMethod = (index) => {
     if (preferences[index].title === 'Capsule') {
@@ -200,111 +224,160 @@ const CreatePlan = () => {
 
       <CreateSteps />
 
+
       <div className="preference-steps">
 
         <div className="preference-option">
-          <span>01</span>
-          <h4>Preferences</h4>
+          <button><span className="first-span">01</span>Preferences</button>
         </div>
         <hr />
 
         <div className="bean-types">
-          <span>02</span>
-          <h4>Bean Type</h4>
+          <button><span>02</span>Bean Type</button>
         </div>
         <hr />
 
         <div className="quantity">
-          <span>03</span>
-          <h4>Quantity</h4>
+          <button><span>03</span>Quantity</button>
         </div>
         <hr />
 
         <div className="grind">
-          <span>04</span>
-          <h4>Grind Option</h4>
+          <button disabled={activeStyle === "Capsule"} ><span>04</span>Grind Option</button>
         </div>
         <hr />
 
         <div className="deliveries">
-          <span>05</span>
-          <h4>Deliveries</h4>
+          <button><span>05</span>Deliveries</button>
         </div>
-        <hr />
+
       </div>
 
-     <div className="preferences">
+      <div className="preferences">
 
         <div className="options">
 
-          <div className="question-one">
-            <h2>How do you drink your coffee?</h2>
+          <div className="question-one" onClick={toggleMethod}>
+            <h2>How do you drink your coffee?
+              {methodOpened ?
+                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-down" /></span> :
+                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-up" className="up-arrow" /></span>
+              }
+            </h2>
           </div>
 
-          {preferences.map((option, index) => (
-            <div key={option.id} onClick={e => chooseMethod(index)} className={option.title === activeStyle ? 'activeColor' : 'inactive'}>
-              <h2>{option.title}</h2>
-              <p>{option.info}</p>
-            </div>))}
+          {methodOpened ?
+            <>
+              {preferences.map((option, index) => (
+
+                <div key={option.id} onClick={e => chooseMethod(index)} className={option.title === activeStyle ? 'activeColor' : 'inactive'}>
+                  <h4>{option.title}</h4>
+                  <p>{option.info}</p>
+                </div>
+
+              ))}
+            </> :
+            ""
+          }
         </div>
 
+
+
         <div className="types">
-          <div className="question-two">
-            <h2>What type of coffee?</h2>
+          <div className="question-two" onClick={toggleType}>
+            <h2>What type of coffee?
+                {typeOpened ? 
+                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-down" /></span> :
+                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-up" className="up-arrow" /></span>
+                }
+              </h2>
           </div>
+          {typeOpened ? 
+          <>
           {beanType.map((type, index) => (
             <div key={type.id} onClick={e => chooseType(index)} className={type.title === activeBeanStyle ? 'activeColor' : 'inactive'}>
-              <h2>{type.title}</h2>
+              <h4>{type.title}</h4>
               <p>{type.info}</p>
             </div>
           ))}
+          </> :
+          ""
+          }
         </div>
 
         <div className="amounts">
-          <div className="question-three">
-            <h2>How much would you like?</h2>
+          <div className="question-three" onClick={toggleAmount}>          
+            <h2>How much would you like?
+            {amountOpened ? 
+             <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-down" /></span> :
+                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-up" className="up-arrow" /></span>}
+            </h2>
           </div>
+
+           {amountOpened ?
+          <>
           {amounts.map((amount, index) => (
             <div key={amount.id} onClick={e => chooseAmount(index)} className={amount.title === activeAmountStyle ? 'activeColor' : 'inactive'}>
-              <h2>{amount.title}</h2>
+              <h4>{amount.title}</h4>
               <p>{amount.info}</p>
             </div>
           ))}
+          </> :
+          ""
+          }
         </div>
 
         <div className="grindtypes">
-          <div className="question-four">
-            <h2>Want us to grind them?</h2>
+          <div className="question-four" onClick={toggleGrind}>
+            <h2>Want us to grind them?
+            {grindOpened ?
+            <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-down" /></span> :
+                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-up" className="up-arrow" /></span>}
+            </h2>
           </div>
+          {grindOpened ? 
+          
+          <>
           {grindtypes.map((grind, index) => (
             <div key={grind.id} onClick={e => chooseGrind(index)} className={grind.title === activeGrindStyle ? 'activeColor' : 'inactive'}>
-              <h2>{grind.title}</h2>
+              <h4>{grind.title}</h4>
               <p>{grind.info}</p>
-
             </div>
           ))}
+          </> :
+          ""
+          }
         </div>
 
         <div className="delivery-times">
-          <div className="question-five">
-            <h2>How often should we deliver?</h2>
+          <div className="question-five" onClick={toggleDelivery}>
+            <h2>How often should we deliver?
+            {deliveryOpened? 
+            <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-down" /></span> :
+                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-up" className="up-arrow" /></span>}
+            </h2>
           </div>
 
+          {deliveryOpened?
+          <>
           {deliveryTimes.map((del, index) => (
             <div key={del.id} onClick={e => chooseDelivery(index)} className={del.title === activeDeliveryStyle ? 'activeColor' : 'inactive'}>
-              <h2>{del.title}</h2>
+              <h4>{del.title}</h4>
               <p>{del.info}</p>
             </div>
           ))}
+          </> :
+          ""
+          }
         </div>
-  
 
-      </div> 
+
+      </div>
 
 
       <div className="summary">
         <h3>Order summary</h3>
-        <p>"I drink my coffee as <span> {chosenMethod} </span>, with a <span>{chosenType}</span> type of bean. <span>{chosenAmount }</span> ground ala <span>{chosenGrind}</span>, sent to me <span>{chosenDelivery}</span>."</p>
+        <p>"I drink my coffee as <span> {chosenMethod} </span>, with a <span>{chosenType}</span> type of bean. <span>{chosenAmount}</span> ground ala <span>{chosenGrind}</span>, sent to me <span>{chosenDelivery}</span>."</p>
       </div>
 
       <button className="order">Create my plan!</button>

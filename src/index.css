@@ -443,14 +443,43 @@ nav a:hover {
 .preference-steps{
   display: inline-grid;
   width: 20%;
+  margin-right: 15%;
+  margin-left: 5%;
+  font-size: 24px;
+  color: #333d4b78;
 }
 
-.preference-steps span, h4{
-  display: inline-block;
+.preference-steps button{
+  font-family: 'Fraunces', serif; 
+  color: #333d4b78;
+  background: none;
+   font-size: 24px;
+  border: none;
+   margin: 15px 0;
+   cursor: pointer;
 }
+
+button:disabled,
+button:disabled span{
+   color: #333d4b36;
+   cursor:auto;
+}
+
 
 .preference-steps span{
-  margin-right: 10px;
+  margin-right: 25px;
+  font-weight: 700;
+  font-family: 'Fraunces', serif;
+  color: #83888f82;
+}
+
+.first-span{
+  color: #0e87847a !important;
+}
+
+.preference-steps hr {
+  width: 100%;
+  border-color: #83888f24; 
 }
 
 .choose-preferences{
@@ -458,8 +487,29 @@ display: inline-block;
 }
 
 .preferences{
-  width: 60%;
+  width: 50%;
   display: inline-grid;
+}
+
+.preferences h2{
+  font-size: 40px;
+  margin: 40px 0;
+  color: #83888F;
+}
+
+.preferences span{
+  float: inline-end;
+}
+
+
+.preferences h4{
+  font-size: 24px;
+  color: #333D4B;
+}
+
+
+.up-arrow{
+  transform: rotate(180deg);
 }
 
 
@@ -470,7 +520,6 @@ display: inline-block;
 .delivery-times {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* grid-template-rows: repeat(2, 1fr); */
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 
@@ -486,17 +535,21 @@ display: inline-block;
 
 .inactive {
   background-color: #97979721;
-  padding: 5%;
-  width: 60%;
+  padding: 5% 6% 25% 10%;
+  width: 75%;
   border-radius: 10px;
 }
 
 .activeColor {
   background-color: #0E8784;
-  padding: 5%;
-  width: 60%;
-  color: white;
+  padding: 5% 6% 25% 10%;
+  width: 75%;
+  color: white !important;
   border-radius: 10px;
+}
+
+.activeColor h4{
+  color: white;
 }
 
 .summary{
