@@ -8,7 +8,7 @@ const Steps = () => {
     <section>
       <div className="steps-outer">
         <h4>How it works</h4>
-        <div className="rental-manager-progress-bar-container">
+        <div className="homepage-steps-container">
           <div></div>
           <div></div>
           <div></div>

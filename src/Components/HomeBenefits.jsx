@@ -24,7 +24,7 @@ const Benefits = () => {
         </div>
 
         <div className="benefits-item">
-          <img src="./assets/home/desktop/icon-truck.svg" alt="Truck icon" />
+          <img src="./assets/home/desktop/icon-truck.svg" alt="Truck icon" className="truck-icon"/>
           <h4>Free shipping</h4>
           <p>We cover the cost and coffee is delivered fast. Peak freshness: guaranteed.</p>
         </div>

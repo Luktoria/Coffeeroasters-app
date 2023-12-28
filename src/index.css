@@ -197,6 +197,10 @@ nav a:hover {
   font-size: 24px;
 }
 
+.truck-icon{
+  height: 72px;
+}
+
 /* --------    Steps styles    --------*/
 
 .steps-outer {
@@ -204,7 +208,7 @@ nav a:hover {
   width: 90%;
 }
 
-.rental-manager-progress-bar-container {
+.homepage-steps-container {
   width: 875px;
   display: flex;
   justify-content: space-between;
@@ -214,7 +218,7 @@ nav a:hover {
 }
 
 
-.rental-manager-progress-bar-container div {
+.homepage-steps-container div {
   background-color: #FEFCF7 !important;
   font-weight: bold;
   color: #7ea5cc;
@@ -816,4 +820,214 @@ footer a:hover {
 
 .social-media li {
   padding-left: 8px;
+}
+
+/* --------    CSS media query styles    --------*/
+
+
+
+@media screen and (max-width: 1500px ) {
+
+/* Homepage*/
+
+.home-intro,
+.intro-text {
+  height: 600px;
+}
+
+.homepage-steps-container{
+  width: 780px;
+}
+
+.steps-description {
+grid-template-columns: repeat(3, 375px);
+}
+/* About us */
+
+  .quality-outer img{
+    right: 250px;
+  }
+
+
+/* Create plan */
+  .create-intro h1{
+    width: 50%;
+  }
+  
+  .create-progress-bar-container{
+    width: 675px;
+  }
+
+   .create-steps-description{
+    grid-template-columns: repeat(3, 320px);
+   }
+  
+  .create-steps-description div {
+    width: 250px;
+  }
+
+  .preference-steps {
+    width: 30%;
+    margin-right: 5%; 
+  }
+
+  .preferences {
+    width: 60%;
+  }
+
+  .summary{
+    width: 50%;
+  }
+
+  .order-container{
+    width: 96%;
+  }
+
+}
+
+@media screen and (max-width: 1250px) {
+
+  /*Homepage*/
+
+  .home-intro{
+    height: 400px;
+  }
+
+  .intro-text{
+    width: 45%;
+    height: 400px;
+  }
+
+  .intro-text h1{
+    font-size: 52px;
+    line-height: 52px;
+  }
+
+  .alternate-title{
+    font-size: 90px;
+  }
+
+  .benefits-background{
+    height: 450px;
+  }
+
+  .benefits-reasons {
+    top: 1475px;
+  }
+
+  .steps-outer {
+    margin: 300px auto 150px auto;
+  }
+
+  .homepage-steps-container{
+    width: 550px;
+  }
+
+  .steps-description{
+    grid-template-columns: repeat(3, 260px);
+  }
+
+  .steps-description div{
+    width: 250px;
+  }
+
+  /*About us*/
+
+  .about-us-intro div{
+    height: 350px;
+    width: 40%;
+  }
+
+  .commitment img{
+    height: 400px;
+  }
+
+  .commitment-text{
+    width: 45%;
+  }
+
+  .commitment-text h2,
+  .quality h2{
+    font-size: 32px;
+    margin-top: 7%;
+  }
+
+  .commitment-text p,
+  .quality p{
+    font-size: 14px;
+  }
+
+  .quality-outer {
+    height: 350px;
+  }
+
+  .quality {
+    width: 50%;
+  }
+
+  .quality-outer img{
+    height: 350px;
+    right: 100px;
+    bottom: -620px;
+  }
+
+  /*Create plan*/
+
+  .create-intro{
+    height: 350px;
+  }
+
+  .create-intro h1{
+    font-size: 48px;
+  }
+
+  .create-intro p{
+    width: 50%;
+  }
+
+  .create-progress-bar-container{
+    width: 515px;
+  }
+
+  .create-steps-description {
+    grid-template-columns: repeat(3, 240px);
+  }
+
+  .create-steps-description div {
+    width: 220px;
+    padding-bottom: 75px;
+  }
+
+  .create-steps-description h2{
+    font-size: 36px;
+  }
+
+  .create-steps-description p{
+    font-size: 14px;
+  }
+
+  .preference-steps button {
+    font-size: 20px;
+  }
+
+  .preferences h2{
+    font-size: 30px;
+  }
+
+  .preferences h4{
+    font-size: 20px;
+  }
+
+  .preferences p{
+    font-size: 14px;
+  }
+
+  .summary p{
+    font-size: 20px;
+    line-height: 32px;
+  }
+  
+
+
+  
 }
