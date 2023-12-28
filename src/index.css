@@ -459,12 +459,33 @@ nav a:hover {
    cursor: pointer;
 }
 
+.preference-active button{
+  color: #333D4B;
+}
+
+.preference-active span{
+  color: #83888F !important;
+}
+
+
 button:disabled,
 button:disabled span{
    color: #333d4b36;
    cursor:auto;
 }
 
+.inactive-div{
+  cursor: auto;
+}
+
+.inactive-div h2{
+  color: #83888f63 !important;
+  cursor: auto;
+}
+
+.inactive-arrow{
+  color: red;
+}
 
 .preference-steps span{
   margin-right: 25px;
@@ -473,14 +494,19 @@ button:disabled span{
   color: #83888f82;
 }
 
-.first-span{
+#first-span{
   color: #0e87847a !important;
+}
+
+#first-span-active{
+  color: #0E8784 !important;
 }
 
 .preference-steps hr {
   width: 100%;
   border-color: #83888f24; 
 }
+
 
 .choose-preferences{
 display: inline-block;
@@ -489,6 +515,7 @@ display: inline-block;
 .preferences{
   width: 50%;
   display: inline-grid;
+  padding-bottom: 5%;
 }
 
 .preferences h2{
@@ -522,6 +549,7 @@ display: inline-block;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  padding-bottom: 25px;
 
 }
 
@@ -529,21 +557,28 @@ display: inline-block;
 .question-two,
 .question-three,
 .question-four,
+.inactive-div,
 .question-five {
   grid-area: 1 / 1 / 2 / 6;
+  cursor: pointer;
 }
 
 .inactive {
   background-color: #97979721;
-  padding: 5% 6% 25% 10%;
-  width: 75%;
+  padding: 5% 10% 25% 10%;
+  width: 77%;
   border-radius: 10px;
+}
+
+.inactive:hover{
+  background-color: #FDD6BA;
+  cursor: pointer;
 }
 
 .activeColor {
   background-color: #0E8784;
-  padding: 5% 6% 25% 10%;
-  width: 75%;
+  padding: 5% 10% 25% 10%;
+  width: 77%;
   color: white !important;
   border-radius: 10px;
 }
@@ -557,6 +592,9 @@ display: inline-block;
   background-color: #2C343E;
   color: white;
   padding: 4%;
+  width: 42%;
+  border-radius: 15px;
+  margin-left: 40%;
 }
 
 .summary h3{
@@ -569,13 +607,26 @@ display: inline-block;
 .summary p{
   font-size: 24px;
    font-family: 'Fraunces', serif;
+   line-height: 40px;
 }
 
 .summary span{
   color: #0E8784;
 }
 
-.order{
+.summary-grind{
+  color: white !important;
+}
+
+.order-container{
+  text-align: right;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.enabled-order{
+  margin-top: 40px;
+  margin-bottom: 80px;
   background: none;
   background-color: #0E8784;
   color: #FEFCF7;
@@ -591,8 +642,125 @@ display: inline-block;
   width: 217px;
 }
 
-.order:hover{
+.enabled-order:hover{
 background-color: #66D2CF;
+}
+
+.disabled-order{
+   margin-top: 40px;
+  margin-bottom: 80px;
+  background: none;
+  background-color: #97979775;
+  color: #FEFCF7;
+  border: none;
+  border-radius: 7px;
+  padding: 0;
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  line-height: 25px;
+  cursor: auto;
+  outline: inherit;
+  height: 56px;
+  width: 217px;
+}
+
+
+/* --------    Dialog styles    --------*/
+
+.dialog-background {
+  width: 100%;
+  height: 100%;
+  background-color: #0404048f;
+  margin: 0 0;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.dialog-body{
+  width: 540px;
+  max-width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 999;
+  background-color: #eee;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog-heading{
+  color: white;
+  border-top-right-radius: 8px;
+   border-top-left-radius: 8px;
+  background-color: #333D4B;
+  padding: 8%;
+}
+
+.dialog-heading h2{
+  margin: 0;
+  font-size: 40px;
+}
+
+.dialog-summary {
+   padding: 8% 8% 0 8%;
+   font-size: 24px;
+   color: #83888F;
+   line-height: 40px;
+   font-family: 'Fraunces', serif;
+}
+
+.dialog-summary h4{
+  margin: 0;
+}
+
+.dialog-summary span{
+  color: #0E8784;
+}
+
+.dialog-summary-grind{
+  color: #83888F !important;
+}
+
+.dialog-safety-check{
+   padding: 0 8%;
+}
+
+.checkout-summary{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 0 20px 0; 
+}
+
+.checkout-summary h3{
+  font-size: 32px;
+  color: #333D4B;
+}
+
+/* --------    Common dialoge styles    --------*/
+
+.common-dialog{
+   width: 540px;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 1000;
+  background-color:#FEFCF7;
+  padding: 5%;
+  border-radius: 8px;
 }
 
 /* --------    Footer styles    --------*/

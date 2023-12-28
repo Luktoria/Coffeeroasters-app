@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import CreateSteps from './CreateSteps';
+import Dialog from './Dialog';
 
 
 
@@ -94,8 +95,7 @@ const CreatePlan = () => {
       title: "Every month",
       info: "$12.00 per shipment. Includes free priority shipping."
     }
-  ]
-
+  ];
 
 
 
@@ -115,7 +115,33 @@ const CreatePlan = () => {
   const [amountOpened, setAmountOpened] = useState(false);
   const [grindOpened, setGrindOpened] = useState(false);
   const [deliveryOpened, setDeliveryOpened] = useState(false);
+  let [price, setPrice] = useState(null);
+  let [frequency, setFrequency] = useState(null);
+  const [monthlyPrice, setMonthlyPrice] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const [commonIsOpen, setCommonIsOpen] = useState(false);
 
+  const openCommonDialog = () => {
+    setCommonIsOpen(true);
+  }
+
+  const closeCommonDialog = () => {
+    setCommonIsOpen(false);
+  }
+
+  const openDialog = () => {
+    setIsOpen(true);
+    calculatePrice();
+  }
+
+  const closeDialog = () => {
+    setIsOpen(false);
+  }
+
+  const calculatePrice = () => {
+    let sum = (price * frequency).toFixed(2);
+    setMonthlyPrice(sum);
+  }
 
   const toggleMethod = () => {
     setMethodOpened(methodOpened => !methodOpened);
@@ -141,6 +167,8 @@ const CreatePlan = () => {
     if (preferences[index].title === 'Capsule') {
       setChosenMethod('using Capsules');
       setActiveStyle('Capsule');
+      /*This is needed so the order button is enabled even if grind option is disabled*/
+      setChosenGrind(' ');
     }
     else if (preferences[index].title === 'Filter') {
       setChosenMethod('as Filter');
@@ -203,14 +231,20 @@ const CreatePlan = () => {
     if (deliveryTimes[index].title === "Every week") {
       setChosenDelivery("Every week");
       setActiveDeliveryStyle("Every week");
+      setPrice(7.20);
+      setFrequency(4);
     }
     else if (deliveryTimes[index].title === "Every 2 weeks") {
       setChosenDelivery("Every two weeks");
       setActiveDeliveryStyle("Every 2 weeks");
+      setPrice(9.60);
+      setFrequency(2);
     }
     else if (deliveryTimes[index].title === "Every month") {
       setChosenDelivery("Every month");
       setActiveDeliveryStyle("Every month");
+      setPrice(12.00);
+      setFrequency(1);
     }
   }
 
@@ -227,27 +261,27 @@ const CreatePlan = () => {
 
       <div className="preference-steps">
 
-        <div className="preference-option">
-          <button><span className="first-span">01</span>Preferences</button>
+        <div className={methodOpened && !activeStyle ? 'preference-active' : ""}>
+          <button><span id={methodOpened && !activeStyle ? "first-span-active" : "first-span"}>01</span>Preferences</button>
         </div>
         <hr />
 
-        <div className="bean-types">
+        <div className={typeOpened && !activeBeanStyle ? 'preference-active' : ""}>
           <button><span>02</span>Bean Type</button>
         </div>
         <hr />
 
-        <div className="quantity">
+        <div className={amountOpened && !activeAmountStyle ? 'preference-active' : ""}>
           <button><span>03</span>Quantity</button>
         </div>
         <hr />
 
-        <div className="grind">
+        <div className={grindOpened && !activeGrindStyle ? 'preference-active' : ""}>
           <button disabled={activeStyle === "Capsule"} ><span>04</span>Grind Option</button>
         </div>
         <hr />
 
-        <div className="deliveries">
+        <div className={deliveryOpened && !activeDeliveryStyle ? 'preference-active' : ""}>
           <button><span>05</span>Deliveries</button>
         </div>
 
@@ -260,8 +294,8 @@ const CreatePlan = () => {
           <div className="question-one" onClick={toggleMethod}>
             <h2>How do you drink your coffee?
               {methodOpened ?
-                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-down" /></span> :
-                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-up" className="up-arrow" /></span>
+                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-up" className="up-arrow" /></span> :
+                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-down" /></span>
               }
             </h2>
           </div>
@@ -286,88 +320,100 @@ const CreatePlan = () => {
         <div className="types">
           <div className="question-two" onClick={toggleType}>
             <h2>What type of coffee?
-                {typeOpened ? 
-                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-down" /></span> :
-                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-up" className="up-arrow" /></span>
-                }
-              </h2>
+              {typeOpened ?
+                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-up" className="up-arrow" /></span> :
+                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-down" /></span>
+              }
+            </h2>
           </div>
-          {typeOpened ? 
-          <>
-          {beanType.map((type, index) => (
-            <div key={type.id} onClick={e => chooseType(index)} className={type.title === activeBeanStyle ? 'activeColor' : 'inactive'}>
-              <h4>{type.title}</h4>
-              <p>{type.info}</p>
-            </div>
-          ))}
-          </> :
-          ""
+          {typeOpened ?
+            <>
+              {beanType.map((type, index) => (
+                <div key={type.id} onClick={e => chooseType(index)} className={type.title === activeBeanStyle ? 'activeColor' : 'inactive'}>
+                  <h4>{type.title}</h4>
+                  <p>{type.info}</p>
+                </div>
+              ))}
+            </> :
+            ""
           }
         </div>
 
         <div className="amounts">
-          <div className="question-three" onClick={toggleAmount}>          
+          <div className="question-three" onClick={toggleAmount}>
             <h2>How much would you like?
-            {amountOpened ? 
-             <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-down" /></span> :
-                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-up" className="up-arrow" /></span>}
+              {amountOpened ?
+                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-up" className="up-arrow" /></span> :
+                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-down" /></span>
+              }
             </h2>
           </div>
 
-           {amountOpened ?
-          <>
-          {amounts.map((amount, index) => (
-            <div key={amount.id} onClick={e => chooseAmount(index)} className={amount.title === activeAmountStyle ? 'activeColor' : 'inactive'}>
-              <h4>{amount.title}</h4>
-              <p>{amount.info}</p>
-            </div>
-          ))}
-          </> :
-          ""
+          {amountOpened ?
+            <>
+              {amounts.map((amount, index) => (
+                <div key={amount.id} onClick={e => chooseAmount(index)} className={amount.title === activeAmountStyle ? 'activeColor' : 'inactive'}>
+                  <h4>{amount.title}</h4>
+                  <p>{amount.info}</p>
+                </div>
+              ))}
+            </> :
+            ""
           }
         </div>
 
         <div className="grindtypes">
-          <div className="question-four" onClick={toggleGrind}>
-            <h2>Want us to grind them?
-            {grindOpened ?
-            <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-down" /></span> :
-                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-up" className="up-arrow" /></span>}
-            </h2>
-          </div>
-          {grindOpened ? 
-          
-          <>
-          {grindtypes.map((grind, index) => (
-            <div key={grind.id} onClick={e => chooseGrind(index)} className={grind.title === activeGrindStyle ? 'activeColor' : 'inactive'}>
-              <h4>{grind.title}</h4>
-              <p>{grind.info}</p>
+          {activeStyle === "Capsule" ?
+            /*Show only the grey question if choice is capsule*/
+            <div className="inactive-div">
+              <h2>Want us to grind them? <span><svg width="19" height="13" xmlns="http://www.w3.org/2000/svg"><path d="M15.949.586l2.828 2.828-9.096 9.096L.586 3.414 3.414.586l6.267 6.267z" fill="#0e87845c" fill-rule="nonzero" /></svg></span></h2>
+            </div> :
+
+            /*Or show the options to grind if choice is anything but capsule*/
+            <div className="question-four" onClick={toggleGrind}>
+              <h2>Want us to grind them?
+                {grindOpened ?
+                  <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-up" className="up-arrow" /></span> :
+                  <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-down" /></span>
+                }
+              </h2>
             </div>
-          ))}
-          </> :
-          ""
           }
+
+          {grindOpened ?
+            <>
+              {grindtypes.map((grind, index) => (
+                <div key={grind.id} onClick={e => chooseGrind(index)} className={grind.title === activeGrindStyle ? 'activeColor' : 'inactive'}>
+                  <h4>{grind.title}</h4>
+                  <p>{grind.info}</p>
+                </div>
+              ))}
+            </> :
+            ""
+          }
+
         </div>
 
         <div className="delivery-times">
           <div className="question-five" onClick={toggleDelivery}>
             <h2>How often should we deliver?
-            {deliveryOpened? 
-            <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-down" /></span> :
-                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-up" className="up-arrow" /></span>}
+              {deliveryOpened ?
+                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-up" className="up-arrow" /></span> :
+                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-down" /></span>
+              }
             </h2>
           </div>
 
-          {deliveryOpened?
-          <>
-          {deliveryTimes.map((del, index) => (
-            <div key={del.id} onClick={e => chooseDelivery(index)} className={del.title === activeDeliveryStyle ? 'activeColor' : 'inactive'}>
-              <h4>{del.title}</h4>
-              <p>{del.info}</p>
-            </div>
-          ))}
-          </> :
-          ""
+          {deliveryOpened ?
+            <>
+              {deliveryTimes.map((del, index) => (
+                <div key={del.id} onClick={e => chooseDelivery(index)} className={del.title === activeDeliveryStyle ? 'activeColor' : 'inactive'}>
+                  <h4>{del.title}</h4>
+                  <p>{del.info}</p>
+                </div>
+              ))}
+            </> :
+            ""
           }
         </div>
 
@@ -377,12 +423,73 @@ const CreatePlan = () => {
 
       <div className="summary">
         <h3>Order summary</h3>
-        <p>"I drink my coffee as <span> {chosenMethod} </span>, with a <span>{chosenType}</span> type of bean. <span>{chosenAmount}</span> ground ala <span>{chosenGrind}</span>, sent to me <span>{chosenDelivery}</span>."</p>
+        <p>"I drink my coffee
+          <span> {chosenMethod}</span>, with a
+          <span> {chosenType}</span> type of bean.
+          <span> {chosenAmount}</span>
+          {activeStyle === "Capsule" ?
+            "" :
+            <>
+          <span className="summary-grind"> ground ala </span>
+          <span>{chosenGrind}</span>
+            </>
+          }
+          , sent to me
+          <span> {chosenDelivery}</span>."</p>
       </div>
 
-      <button className="order">Create my plan!</button>
+      <div className="order-container">
+        {chosenMethod === "_____" || chosenType === "_____" || chosenAmount === "_____" || chosenGrind === "_____" || chosenDelivery === "_____" ?
+          <button className="disabled-order">Create my plan!</button> :
+          <button className="enabled-order" onClick={openDialog}>Create my plan!</button>
+
+        }
+      </div>
 
 
+      <Dialog
+        isOpen={isOpen}
+        onClose={e => closeDialog()}
+        closeWindow={e => closeDialog()}>
+
+        <div className="dialog-heading">
+        <h2>Order Summary</h2>
+        </div>
+
+        <div className="dialog-summary">
+         <h4>"I drink my coffee
+          <span> {chosenMethod}</span>, with a
+          <span> {chosenType}</span> type of bean.
+          <span> {chosenAmount}</span>
+          {activeStyle === "Capsule" ?
+            "" :
+            <>
+          <span  className="dialog-summary-grind"> ground ala </span>
+          <span>{chosenGrind}</span>
+            </>
+          }
+          , sent to me
+          <span> {chosenDelivery}</span>."</h4>
+        </div>
+
+        <div className="dialog-safety-check">
+        <p>Is this correct? You can proceed to checkout or go back to plan selection if something is off. Subscription discount codes can also be redeemed at the checkout. </p>
+        </div>
+       
+       <div className="checkout-summary">
+        <h3>${monthlyPrice} / mo</h3>
+        <button className="primary-button" onClick={ () => {openCommonDialog(); closeDialog()}}>Checkout</button>
+        </div>
+      </Dialog>
+
+      <Dialog 
+      isOpen={commonIsOpen}
+        closeWindow={e => closeCommonDialog()}>
+        <div className="common-dialog">
+      <h2>Dear visitor!</h2>
+      <p>Since this is only a fictional coffee website, the social media icons and the checkout button is only for the sake of design. Thank you for trying them out anyway!</p>
+      </div>
+      </Dialog>
     </section >
   );
 };
