@@ -208,6 +208,11 @@ nav a:hover {
   width: 90%;
 }
 
+.steps-outer h4{
+  color: #83888F;
+  font-size: 24px;
+}
+
 .homepage-steps-container {
   width: 875px;
   display: flex;
@@ -300,31 +305,40 @@ nav a:hover {
 }
 
 .quality-outer {
+  display: flex;
+  justify-content: space-around;
+   align-items: flex-end;
   background-color: #2C343E;
-  height: 500px;
+  height: 450px;
   border-radius: 10px;
   padding-left: 7%;
   color: #FEFCF7;
   margin-bottom: 10%;
 }
 
-.quality-outer img {
-  display: inline-block;
-  border-radius: 15px;
-  position: absolute;
-  right: 320px;
-  bottom: -870px;
-}
 
 .quality {
   display: inline-flex;
   flex-direction: column;
+  justify-content: center;
   width: 40%;
+  height: 450px;
+
 }
 
 .quality h2 {
   font-size: 40px;
-  margin-top: 15%;
+}
+
+.quality-img{
+  display: inline-block;
+  width: 445px;
+  height: 480px;
+  background-image: url('../public/assets/about/desktop/image-quality.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  margin-bottom: 100px;
 }
 
 /* --------    Headquarters styles    --------*/
@@ -842,11 +856,7 @@ footer a:hover {
 .steps-description {
 grid-template-columns: repeat(3, 375px);
 }
-/* About us */
 
-  .quality-outer img{
-    right: 250px;
-  }
 
 
 /* Create plan */
@@ -962,13 +972,14 @@ grid-template-columns: repeat(3, 375px);
   }
 
   .quality {
+    height: 350px;
     width: 50%;
   }
 
-  .quality-outer img{
-    height: 350px;
-    right: 100px;
-    bottom: -620px;
+  .quality-img{
+    height: 380px;
+    width: 332px;
+    margin-bottom: 50px;
   }
 
   /*Create plan*/
@@ -1027,7 +1038,178 @@ grid-template-columns: repeat(3, 375px);
     line-height: 32px;
   }
   
+  /*Dialog*/
+
+  .dialog-body{
+    width: 480px;
+  }
+
+  .dialog-heading h2{
+    font-size: 36px;
+  }
+
+  .dialog-summary{
+    font-size: 21px;
+    line-height: 34px;
+  }
+
+  .checkout-summary h3{
+    font-size: 28px;
+  }
+
+}
+
+@media screen and (max-width: 850px){
+
+    body{
+      padding: 0 5%;
+    }
+  /*Homepage*/
+   .home-intro{
+    background-image: url('../public/assets/home/tablet/image-hero-coffeepress.jpg');
+    height: 500px;
+    max-width: 689px;
+    margin: 0 auto;
+   } 
+
+  .intro-text{
+    width: 60%;
+    height: 500px;
+    padding-left: 10%;
+  }
+
+  .intro-text h1{
+    font-size: 48px;
+    line-height: 48px;
+  }
+
+  .intro-text p{
+    width: 100%;
+  }
+
+  .collection-coffees{
+    flex-direction: column;
+  }
+
+  .collection-item{
+    width: 100%;
+    display: flex;
+    text-align: left;
+  }
+
+  .collection-item div{
+    width: 45%;
+    padding-bottom: 10%;
+  }
+
+  .collection-item img{
+    margin-left: 10%;
+  }
+
+  .benefits-section{
+    height: 800px;
+  }
+
+  .benefits-background{
+    height: 573px;
+  }
+
+  .benefits-reasons{
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    left: 10%;
+    z-index: 999;
+    top: 2000px;
+    }
+
+    .benefits h2{
+      font-size: 32px;
+    }
+
+    .benefits p{
+      width: 80%;
+    }
+
+    .benefits-item {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-evenly;
+      text-align: left;
+      align-items: center;
+      padding: 30px 0;
+      margin: 10px 0;
+    }
+
+      #truck-icon{
+      height: 39px;
+      width: 55px;
+    }
+
+    .benefits-item img{
+      height: 56px; 
+      width: 56px;
+    }
+
+    .benefits-item h4{
+      margin: 10px 0;
+    }
 
 
-  
+    .benefits-item div{
+      width: 60%;
+    }
+
+    .steps-description{
+      grid-template-columns: repeat(3, 100px);
+    }
+
+    .homepage-steps-container{
+      width: 78%;
+    }
+
+    .steps-outer{
+      margin: 200px auto 150px auto;
+    }
+
+    .steps-description{
+      width: 100%;
+      grid-template-columns: repeat(3, 36%);
+      height: 450px;
+    }
+
+    .steps-description div {
+      width: 90%;
+    }
+
+    .steps-description h3{
+      font-size: 28px;
+      width: 100%;
+    }
+
+    .steps-description p{
+      font-size: 15px;
+    }
+
+    /*Footer styles*/
+
+    footer{
+      flex-direction: column;
+      height: 270px;
+      justify-content: center;
+    }
+
+    .logo-container{
+      margin: 10px 0;
+    }
+
+    ul{
+      padding-left: 0;
+    }
+
+    .social-media{
+      margin-top: 40px;
+    }
+
 }
