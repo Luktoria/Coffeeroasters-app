@@ -7,13 +7,13 @@ const Navbar = () => {
       <img src="./shared/desktop/logo.svg" alt="Coffeeroasters logo" />
         <ul>
           <li>
-            <Link to="/Coffeeroasters-app">HomePage</Link>
+            <Link to="/Coffeeroasters-app/home">HomePage</Link>
           </li>
           <li>
            <Link to="/Coffeeroasters-app/aboutus">About Us</Link>
           </li>
           <li>
-            <Link to="/createplan">Create plan</Link>
+            <Link to="/Coffeeroasters-app/createplan">Create plan</Link>
           </li>
         </ul>
 
