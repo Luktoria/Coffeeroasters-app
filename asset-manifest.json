@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Coffeeroasters-app/static/css/main.2d06b7b1.css",
-    "main.js": "/Coffeeroasters-app/static/js/main.55ffa563.js",
+    "main.js": "/Coffeeroasters-app/static/js/main.302a3b3f.js",
     "static/js/787.13d3b27d.chunk.js": "/Coffeeroasters-app/static/js/787.13d3b27d.chunk.js",
     "static/media/image-hero-whitecup.jpg": "/Coffeeroasters-app/static/media/image-hero-whitecup.fde3b82b9785fd2dc4fb.jpg",
     "static/media/image-hero-coffeepress.jpg": "/Coffeeroasters-app/static/media/image-hero-coffeepress.98b54308c9d0f58cc6e7.jpg",
@@ -9,11 +9,11 @@
     "static/media/image-quality.jpg": "/Coffeeroasters-app/static/media/image-quality.9d7a76b20cb0d1e71059.jpg",
     "index.html": "/Coffeeroasters-app/index.html",
     "main.2d06b7b1.css.map": "/Coffeeroasters-app/static/css/main.2d06b7b1.css.map",
-    "main.55ffa563.js.map": "/Coffeeroasters-app/static/js/main.55ffa563.js.map",
+    "main.302a3b3f.js.map": "/Coffeeroasters-app/static/js/main.302a3b3f.js.map",
     "787.13d3b27d.chunk.js.map": "/Coffeeroasters-app/static/js/787.13d3b27d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2d06b7b1.css",
-    "static/js/main.55ffa563.js"
+    "static/js/main.302a3b3f.js"
   ]
 }
