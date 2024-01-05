@@ -12,7 +12,6 @@ const App = () => {
     <Navbar />
       <Routes>
         <Route path="/Coffeeroasters-app" element={<HomePage/>}/>
-        <Route path="/Coffeeroasters-app/home" element={<HomePage/>}/>
         <Route path="/Coffeeroasters-app/aboutus" element={<AboutUs/>}/>
         <Route path="/Coffeeroasters-app/createplan" element={<CreatePlan/>}/>
       </Routes>
