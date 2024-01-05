@@ -13,7 +13,7 @@ const HomePage = () => {
           <h1>Great Coffee made simple.</h1>
           <p>Start your morning with the world's best coffees. Try our expertly curated artisan coffees from our best roasters delivered directly to your door, at your schedule.</p>
           {/* Button to navigate to the Contact page */}
-          <Link to="/createplan">
+          <Link to="/Coffeeroasters-app/createplan">
             <button className="primary-button">Create your plan</button>
           </Link>
         </div>

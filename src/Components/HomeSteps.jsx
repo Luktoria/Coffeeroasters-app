@@ -37,7 +37,7 @@ const Steps = () => {
 
 
         {/* Button to navigate to the Contact page */}
-        <Link to="/createplan">
+        <Link to="/Coffeeroasters-app/createplan">
           <button className="primary-button">Create your plan</button>
         </Link>
 
