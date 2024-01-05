@@ -12,6 +12,7 @@ const App = () => {
     <Navbar />
       <Routes>
         <Route path="/Coffeeroasters-app" element={<HomePage/>}/>
+        <Route path="/home" element={<HomePage/>}/>
         <Route path="/aboutus" element={<AboutUs/>}/>
         <Route path="/createplan" element={<CreatePlan/>}/>
       </Routes>
