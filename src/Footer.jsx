@@ -36,13 +36,13 @@ const Footer = () => {
 
       <ul>
         <li>
-          <Link to="/">HomePage</Link>
+          <Link to="/Coffeeroasters-app/">HomePage</Link>
         </li>
         <li>
-          <Link to="/aboutus">About Us</Link>
+          <Link to="/Coffeeroasters-app/aboutus">About Us</Link>
         </li>
         <li>
-          <Link to="/createplan">Create your plan</Link>
+          <Link to="/Coffeeroasters-app/createplan">Create your plan</Link>
         </li>
       </ul>
 
