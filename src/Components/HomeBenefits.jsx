@@ -1,6 +1,7 @@
 import React from 'react';
 import coffeeBean from '../imgs/assets/home/desktop/icon-coffee-bean.svg';
 import giftImg from '../imgs/assets/home/desktop/icon-gift.svg';
+import truckImg from '../imgs/assets/home/desktop/icon-truck.svg';
 
 
 const Benefits = () => {
@@ -31,7 +32,7 @@ const Benefits = () => {
         </div>
 
         <div className="benefits-item">
-          <img src="./assets/home/desktop/icon-truck.svg" alt="Truck icon" id="truck-icon"/>
+          <img src={truckImg} alt="Truck icon" id="truck-icon"/>
           <div>
           <h4>Free shipping</h4>
           <p>We cover the cost and coffee is delivered fast. Peak freshness: guaranteed.</p> 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import CreateSteps from './CreateSteps';
 import Dialog from './Dialog';
+import arrowImg from '../imgs/assets/plan/desktop/icon-arrow.svg';
 
 
 
@@ -294,8 +295,8 @@ const CreatePlan = () => {
           <div className="question-one" onClick={toggleMethod}>
             <h2>How do you drink your coffee?
               {methodOpened ?
-                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-up" className="up-arrow" /></span> :
-                <span><img src="assets/plan/desktop/icon-arrow.svg" alt="arrow-down" /></span>
+                <span><img src={arrowImg} alt="arrow-up" className="up-arrow" /></span> :
+                <span><img src={arrowImg} alt="arrow-down" /></span>
               }
             </h2>
           </div>

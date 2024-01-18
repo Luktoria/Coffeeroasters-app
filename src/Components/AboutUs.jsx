@@ -1,4 +1,9 @@
 import React from 'react';
+import commitmentImg from '../imgs/assets/about/desktop/image-commitment.jpg';
+import ukImg from '../imgs/assets/about/desktop/illustration-uk.svg';
+import caImg from '../imgs/assets/about/desktop/illustration-canada.svg';
+import auImg from '../imgs/assets/about/desktop/illustration-australia.svg';
+
 
 const AboutUs = () => {
   return (
@@ -12,7 +17,7 @@ const AboutUs = () => {
 
       <div className="commitment">
         <div>
-          <img src="assets\about\desktop\image-commitment.jpg" alt="barista" />
+          <img src={commitmentImg} alt="barista" />
         </div>
         <div className="commitment-text">
           <h2>Our commitment</h2>
@@ -36,7 +41,7 @@ const AboutUs = () => {
         <h4>Our headquarters</h4>
         <div className="headquarters">
         <div>
-          <img src="assets/about/desktop/illustration-uk.svg" alt="UK illustration" />
+          <img src={ukImg} alt="UK illustration" />
           <h3>United Kingdom</h3>
           <p>68  Asfordby Rd</p>
           <p>Alcaston</p>
@@ -45,7 +50,7 @@ const AboutUs = () => {
         </div>
 
          <div>
-          <img src="assets/about/desktop/illustration-canada.svg" alt="Canada illustration" />
+          <img src={caImg} alt="Canada illustration" />
           <h3>Canada</h3>
           <p>1528  Eglinton Avenue</p>
           <p>Toronto</p>
@@ -54,7 +59,7 @@ const AboutUs = () => {
         </div>
 
           <div>
-          <img src="assets/about/desktop/illustration-australia.svg" alt="Australia illustration" />
+          <img src={auImg} alt="Australia illustration" />
           <h3>Australia</h3>
           <p>36 Swanston Street</p>
           <p>Kewell</p>
