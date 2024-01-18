@@ -1,4 +1,7 @@
 import React from 'react';
+import coffeeBean from '../imgs/assets/home/desktop/icon-coffee-bean.svg';
+import giftImg from '../imgs/assets/home/desktop/icon-gift.svg';
+
 
 const Benefits = () => {
   return (
@@ -12,7 +15,7 @@ const Benefits = () => {
 
       <div className="benefits-reasons">
         <div className="benefits-item">
-          <img src="./assets/home/desktop/icon-coffee-bean.svg" alt="Coffee bean icon" />
+          <img src={coffeeBean} alt="Coffee bean icon" />
           <div>
           <h4>Best quality</h4>
           <p>Discover an endless variety of the world’s best artisan coffee from each of our roasters.</p>
@@ -20,7 +23,7 @@ const Benefits = () => {
         </div>
 
         <div className="benefits-item">
-          <img src="./assets/home/desktop/icon-gift.svg" alt="Gift icon" />
+          <img src={giftImg} alt="Gift icon" />
           <div>
           <h4>Exclusive benefits</h4>
           <p>Special offers and swag when you subscribe, including 30% off your first shipment.</p>
