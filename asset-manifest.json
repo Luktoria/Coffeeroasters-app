@@ -1,19 +1,21 @@
 {
   "files": {
-    "main.css": "/Coffeeroasters-app/static/css/main.2d06b7b1.css",
-    "main.js": "/Coffeeroasters-app/static/js/main.9a612993.js",
+    "main.css": "/Coffeeroasters-app/static/css/main.8b4c22b2.css",
+    "main.js": "/Coffeeroasters-app/static/js/main.a7ed5ae1.js",
     "static/js/787.13d3b27d.chunk.js": "/Coffeeroasters-app/static/js/787.13d3b27d.chunk.js",
     "static/media/image-hero-whitecup.jpg": "/Coffeeroasters-app/static/media/image-hero-whitecup.fde3b82b9785fd2dc4fb.jpg",
     "static/media/image-hero-coffeepress.jpg": "/Coffeeroasters-app/static/media/image-hero-coffeepress.98b54308c9d0f58cc6e7.jpg",
     "static/media/image-hero-blackcup.jpg": "/Coffeeroasters-app/static/media/image-hero-blackcup.de218151e60ac3532632.jpg",
     "static/media/image-quality.jpg": "/Coffeeroasters-app/static/media/image-quality.9d7a76b20cb0d1e71059.jpg",
     "index.html": "/Coffeeroasters-app/index.html",
-    "main.2d06b7b1.css.map": "/Coffeeroasters-app/static/css/main.2d06b7b1.css.map",
-    "main.9a612993.js.map": "/Coffeeroasters-app/static/js/main.9a612993.js.map",
+    "static/media/icon-gift.svg": "/Coffeeroasters-app/static/media/icon-gift.611b8a07de39ff224d4e24d0744c8a7b.svg",
+    "static/media/icon-coffee-bean.svg": "/Coffeeroasters-app/static/media/icon-coffee-bean.a39b0780d7eeb72d87aa4f5a2b7f4bdf.svg",
+    "main.8b4c22b2.css.map": "/Coffeeroasters-app/static/css/main.8b4c22b2.css.map",
+    "main.a7ed5ae1.js.map": "/Coffeeroasters-app/static/js/main.a7ed5ae1.js.map",
     "787.13d3b27d.chunk.js.map": "/Coffeeroasters-app/static/js/787.13d3b27d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d06b7b1.css",
-    "static/js/main.9a612993.js"
+    "static/css/main.8b4c22b2.css",
+    "static/js/main.a7ed5ae1.js"
   ]
 }
