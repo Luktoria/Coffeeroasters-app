@@ -1064,6 +1064,10 @@ grid-template-columns: repeat(3, 375px);
     body{
       padding: 0 5%;
     }
+
+    nav{
+      margin: 20px 0;
+    }
   /*Homepage*/
    .home-intro{
     background-image: url('../public/assets/home/tablet/image-hero-coffeepress.jpg');
@@ -1120,7 +1124,7 @@ grid-template-columns: repeat(3, 375px);
     width: 80%;
     left: 10%;
     z-index: 999;
-    top: 2000px;
+    top: 2050px;
     }
 
     .benefits h2{
