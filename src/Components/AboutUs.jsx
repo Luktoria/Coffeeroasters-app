@@ -1,8 +1,6 @@
 import React from 'react';
 import commitmentImg from '../imgs/assets/about/desktop/image-commitment.jpg';
-import ukImg from '../imgs/assets/about/desktop/illustration-uk.svg';
-import caImg from '../imgs/assets/about/desktop/illustration-canada.svg';
-import auImg from '../imgs/assets/about/desktop/illustration-australia.svg';
+import { HEADQUARTERS } from '../data.js';
 
 
 const AboutUs = () => {
@@ -37,38 +35,25 @@ const AboutUs = () => {
         
       </div>
 
+
       <div className="headquarters-outer">
         <h4>Our headquarters</h4>
         <div className="headquarters">
-        <div>
-          <img src={ukImg} alt="UK illustration" />
-          <h3>United Kingdom</h3>
-          <p>68  Asfordby Rd</p>
-          <p>Alcaston</p>
-          <p>SY6 1YA</p>
-          <p>+44 1241 918425</p>
-        </div>
 
-         <div>
-          <img src={caImg} alt="Canada illustration" />
-          <h3>Canada</h3>
-          <p>1528  Eglinton Avenue</p>
-          <p>Toronto</p>
-          <p>Ontario M4P 1A6</p>
-          <p>+1 416 485 2997</p>
-        </div>
-
-          <div>
-          <img src={auImg} alt="Australia illustration" />
-          <h3>Australia</h3>
-          <p>36 Swanston Street</p>
-          <p>Kewell</p>
-          <p>Victoria</p>
-          <p>+61 4 9928 3629</p>
-        </div>
+        {HEADQUARTERS.map((country) => {
+          return (
+          <div key={country.country}>
+          <img src={country.img} alt={"illustration of " + country.country}/>
+          <h3>{country.country}</h3>
+          <p>{country.address}</p>
+          <p>{country.city}</p>
+          <p>{country.postcode}</p>
+          <p>{country.phone}</p>
+          </div>
+      )
+      })}
         
         </div>
-      
       </div>
     </section>
   );
