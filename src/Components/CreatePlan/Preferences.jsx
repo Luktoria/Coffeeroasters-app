@@ -1,8 +1,5 @@
-import { useState } from 'react';
-
 import OrderOption from './OrderOption';
 import OrderQuestion from './OrderQuestion';
-import OrderSummary from './OrderSummary';
 import { PREFERENCES } from '../../data';
 import { BEANTYPE } from '../../data';
 import { AMOUNTS } from '../../data';
@@ -10,82 +7,22 @@ import { GRINDTYPES } from '../../data';
 import { DELIVERYTIMES } from '../../data';
 
 
-export default function Preferences(){
-    //States for showing or hiding the three options
-  const [showCoffee, setShowCoffee] = useState(false);
-  const [showBean, setShowBean] = useState(false);
-  const [showAmount, setShowAmount] = useState(false);
-  const [showGrind, setShowGrind] = useState(false);
-  const [showDelivery, setShowDelivery] = useState(false);
-
-  //States for setting the coffee types
-  const [coffee, setCoffee] = useState("_____");
-  const [bean, setBean] = useState("_____");
-  const [amount, setAmount] = useState("_____");
-  const [grind, setGrind] = useState("_____");
-  const [delivery, setDelivery] = useState("_____");
-
-  // ------- Click on questions to show/hide element --------------------------
-  function handleCoffee() {
-    setShowCoffee(!showCoffee);
-  }
-
-  function handleBean() {
-    setShowBean(!showBean);
-  }
-
-  function handleAmount() {
-    setShowAmount(!showAmount);
-  }
-
-  function handleGrind() {
-    setShowGrind(!showGrind); 
-  }
-
-  function handleDelivery() {
-    setShowDelivery(!showDelivery)
-  }
-
-// ------- Select types functions--------------------------
-
-  function selectType(clickedItem) {
-    //capsule, filter, espresso
-    setCoffee(clickedItem);
-  }
-
-  function selectBean(clickedItem) {
-    //single origin, decaf, blended
-    setBean(clickedItem);
-  }
-
-  function selectAmount(clickedItem) {
-    //250g, 500g, 1000g
-    setAmount(clickedItem);
-  }
-
-  function selectGrind(clickedItem) {
-    // wholebean, filter, cafetiére
-    setGrind(clickedItem);
-  }
-
-  function selectDelivery(clickedItem) {
-    // weekly, 2weekly, monthly
-    setDelivery(clickedItem)
-  }
+export default function Preferences({ showItems, onShow, onChoose }) {
 
   return (
-        <>
-          <div className="preferences">
+    <>
+      <div className="preferences">
 
 
         <div className="options">
           <OrderQuestion order="How do you drink your coffee?"
-            showOptions={handleCoffee}
-            showArrow={showCoffee} />
-          {showCoffee ?
+            showOptions={() => onShow('showCoffee', !showItems.showCoffee)}
+            showArrow={showItems.showCoffee} />
+
+          {showItems.showCoffee ?
             <>
               {PREFERENCES.map((preference) => {
-                return (<OrderOption key={preference.id} {...preference} onOrderClick={selectType} />)
+                return (<OrderOption key={preference.id} {...preference} onOrderClick={(title) => onChoose(title, 'coffee')} />)
               })}
             </> : ''}
         </div>
@@ -94,27 +31,26 @@ export default function Preferences(){
 
         <div className="options">
           <OrderQuestion order="What type of coffee?"
-            showOptions={handleBean}
-            showArrow={showBean} />
-          {showBean ?
+            showOptions={() => onShow('showBean', !showItems.showBean)}
+            showArrow={showItems.showBean} />
+          {showItems.showBean ?
             <>
               {BEANTYPE.map((preference) => {
-                return (<OrderOption key={preference.id} {...preference} onOrderClick={selectBean} />)
+                return (<OrderOption key={preference.id} {...preference} onOrderClick={(title) => onChoose(title, 'bean')} />)
               })}
             </> : ''}
         </div>
 
 
-
         <div className="options">
           <OrderQuestion order="How much would you like?"
-            showOptions={handleAmount}
-            showArrow={showAmount}
+            showOptions={() => onShow('showAmount', !showItems.showAmount)}
+            showArrow={showItems.showAmount}
           />
-          {showAmount ?
+          {showItems.showAmount ?
             <>
               {AMOUNTS.map((preference) => {
-                return (<OrderOption key={preference.id} {...preference} onOrderClick={selectAmount} />)
+                return (<OrderOption key={preference.id} {...preference} onOrderClick={(title) => onChoose(title, 'amount')} />)
               })}
             </> : ''}
         </div>
@@ -122,14 +58,14 @@ export default function Preferences(){
 
         <div className="options">
           <OrderQuestion order="Want us to grind them?"
-            showOptions={handleGrind}
-            showArrow={showGrind}
+            showOptions={() => onShow('showGrind', !showItems.showGrind)}
+            showArrow={showItems.showGrind}
           />
 
-          {showGrind ?
+          {showItems.showGrind ?
 
             <>{GRINDTYPES.map((preference) => {
-              return (<OrderOption key={preference.id} {...preference} onOrderClick={selectGrind} />)
+              return (<OrderOption key={preference.id} {...preference} onOrderClick={(title) => onChoose(title, 'grind')} />)
             })} </>
             : ''}
 
@@ -138,28 +74,18 @@ export default function Preferences(){
 
         <div className="options">
           <OrderQuestion order="How often should we deliver?"
-            showOptions={handleDelivery}
-            showArrow={showDelivery} />
+            showOptions={() => onShow('showDelivery', !showItems.showDelivery)}
+            showArrow={showItems.showDelivery} />
 
-          {showDelivery ?
+          {showItems.showDelivery ?
             <>
               {DELIVERYTIMES.map((preference) => {
-                return (<OrderOption key={preference.id} {...preference} onOrderClick={selectDelivery} />)
+                return (<OrderOption key={preference.id} {...preference} onOrderClick={(title) => onChoose(title, 'delivery')} />)
               })}
             </> : ''}
         </div>
 
       </div>
-
-      
-       <OrderSummary coffee={coffee}
-        type={bean}
-        amount={amount}
-        grind={grind}
-        delivery={delivery}
-      />
-      </>
-
+    </>
   )
-
 }
